@@ -1,0 +1,62 @@
+
+CRONJOB
+
+
+
+yum install cronie -y
+To install crontab without y/n.
+
+
+ls -la
+To check the availability of sh file & log file
+
+
+/etc/crontab
+
+touch <filename>
+vi <filename.sh>
+create and edit shell script file 
+
+cron.allow 
+/etc/cron.allow
+we can write usernames to which the user give access
+
+
+
+chmod 777 nav.sh
+To give permissions to execute
+
+crontab -e
+we can edit the crontab.
+"* * * * * /root/nav.sh > /root/navlog 2>&1"
+
+* * * * * /ec2-user/one.sh > /ec2-user/onelog 2>&1
+
+crontab -l
+
+	cronjob format: 
+	min  	hr 		days 	months 		weeks
+	0-59 	0-23 	1-31	1-12		0-6
+	*		*		*		*			*
+	
+	* * * * * <path of shell script file> > <path of log file> 
+	we can check for what is inside the crontab.
+	
+	* * * * * /root/nav.sh > /root/navlog 2>&1
+
+cat nav.sh 
+date
+
+vi <filename>
+vi nav.sh
+
+service crond status
+To check whether the service is running or not 
+
+service crond start 
+To start the service 
+
+# 
+To comment the cronjob 
+
+ 
